@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const { User, validate } = require("../models/user");
 const bcrypt = require("bcrypt");
+const auth = require("../middleware/auth");
 
 // Create user (Signup)
 router.post("/", async (req, res) => {
@@ -42,16 +43,20 @@ router.post("/", async (req, res) => {
 
 // ✅ Correct `/me` route (instead of `/api/users/me`)
 router.get("/me", async (req, res) => {
-	try {
-		res.json({ id: 1, name: "Johaedfa	n Doe", email: "john@example.com" });
-	} catch (error) {
-		res.status(500).json({ message: "Error fetching user", error });
-	}
+	console.log("done");
+	
 });
 
-app.get("/api/users/me", (req, res) => {
-	res.json({ id: 1, name: "John Doe", email: "john@example.com" });
-    });
-    
+router.get("/:id", auth, async (req, res) => {
+	try {
+	  const user = await User.findById(req.params.id).select("name email authSource");
+	  if (!user) return res.status(404).send({ message: "User not found" });
+      
+	  res.json(user);
+	} catch (error) {
+	  res.status(500).send({ message: "Internal Server Error" });
+	}
+      });
+      
 
 module.exports = router;

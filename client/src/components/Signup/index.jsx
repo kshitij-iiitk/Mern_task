@@ -5,8 +5,7 @@ import styles from "./styles.module.css";
 
 const Signup = () => {
 	const [data, setData] = useState({
-		firstName: "",
-		lastName: "",
+		name: "",
 		email: "",
 		password: "",
 	});
@@ -19,6 +18,7 @@ const Signup = () => {
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
+
 		try {
 			const url = "http://localhost:8080/api/users";
 			const { data: res } = await axios.post(url, data);
@@ -42,7 +42,7 @@ const Signup = () => {
 					<h1>Welcome Back</h1>
 					<Link to="/login">
 						<button type="button" className={styles.white_btn}>
-							Sing in
+							Sign in
 						</button>
 					</Link>
 				</div>
@@ -51,19 +51,10 @@ const Signup = () => {
 						<h1>Create Account</h1>
 						<input
 							type="text"
-							placeholder="First Name"
-							name="firstName"
+							placeholder="Name"
+							name="name"
 							onChange={handleChange}
-							value={data.firstName}
-							required
-							className={styles.input}
-						/>
-						<input
-							type="text"
-							placeholder="Last Name"
-							name="lastName"
-							onChange={handleChange}
-							value={data.lastName}
+							value={data.name}
 							required
 							className={styles.input}
 						/>
@@ -87,7 +78,7 @@ const Signup = () => {
 						/>
 						{error && <div className={styles.error_msg}>{error}</div>}
 						<button type="submit" className={styles.green_btn}>
-							Sing Up
+							Sign Up
 						</button>
 					</form>
 				</div>
