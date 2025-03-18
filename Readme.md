@@ -4,11 +4,6 @@
 
 Follow these steps to set up and run the project locally.
 
-### Prerequisites
-- Node.js (Latest LTS version recommended)
-- MongoDB (Local or Cloud Instance)
-- Git (Optional but recommended)
-
 ### Clone the Repository
 ```sh
 git clone https://github.com/kshitij-iiitk/Mern_task.git
@@ -44,6 +39,6 @@ JWTPRIVATEKEY=<same-secrect-key>
 - Uploading & Distributing Lists
 
 ## Tech Stack
-- **Frontend:** React, Tailwind CSS
+- **Frontend:** React
 - **Backend:** Node.js, Express
 - **Database:** MongoDB
