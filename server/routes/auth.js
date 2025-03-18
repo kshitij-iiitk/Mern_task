@@ -1,8 +1,11 @@
+// Desc: Route to authenticate a user
+
 const router = require("express").Router();
 const { User } = require("../models/user");
 const bcrypt = require("bcrypt");
 const Joi = require("joi");
 
+// This will be accessible at /api/auth
 router.post("/", async (req, res) => {
 	try {
 		const { error } = validate(req.body);

@@ -1,0 +1,92 @@
+.container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 1vh;
+  padding: 24px;
+  background: white;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 16px;
+  color: #333;
+}
+
+.list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.listItem {
+  padding: 16px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  background-color: #f9f9f9;
+}
+
+.listItemHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.agentName {
+  font-size: 18px;
+  font-weight: 600;
+  color: #222;
+}
+
+.agentEmail {
+  color: #555;
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 10px;
+}
+
+.button {
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+}
+
+.button.show {
+  background-color: #007bff;
+  color: white;
+}
+
+.button.delete {
+  background-color: #dc3545;
+  color: white;
+}
+
+.contactsContainer {
+  margin-top: 10px;
+  padding: 12px;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.contactTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.contactTable th,
+.contactTable td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.contactTable th {
+  background-color: #f0f0f0;
+  text-align: left;
+}

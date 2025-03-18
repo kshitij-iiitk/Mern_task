@@ -1,10 +1,12 @@
+//Desc: Route for user registration and fetching user details
+
 const express = require("express");
 const router = express.Router();
 const { User, validate } = require("../models/user");
 const bcrypt = require("bcrypt");
 const auth = require("../middleware/auth");
 
-// Create user (Signup)
+// This will be accessible at /api/users
 router.post("/", async (req, res) => {
 	try {
 		// If the user is registering via Google OAuth, skip password validation
@@ -41,12 +43,20 @@ router.post("/", async (req, res) => {
 	}
 });
 
-// ✅ Correct `/me` route (instead of `/api/users/me`)
-router.get("/me", async (req, res) => {
-	console.log("done");
-	
+// This will be accessible at /api/users/me
+router.get("/me", auth, async (req, res) => {
+	try {
+		const user = await User.findById(req.user._id).select("-password");
+		if (!user) return res.status(404).send({ message: "User not found" });
+
+		res.status(200).json(user);
+	} catch (error) {
+		res.status(500).send({ message: "Internal Server Error" });
+	}
 });
 
+
+// This will be accessible at /api/users/:id
 router.get("/:id", auth, async (req, res) => {
 	try {
 	  const user = await User.findById(req.params.id).select("name email authSource");

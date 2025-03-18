@@ -1,9 +1,12 @@
 import { Navigate, Outlet } from "react-router-dom";
 
-const PublicRoute = () => {
-	const isAuthenticated = localStorage.getItem("token"); // Example check
+// Redirects to the home page if the user is already authenticated
+// Otherwise, renders the child components
 
-	return isAuthenticated ? <Navigate to="/" replace /> : <Outlet />;
+const PublicRoute = () => {
+  const isAuthenticated = localStorage.getItem("token"); 
+
+  return isAuthenticated ? <Navigate to="/" replace /> : <Outlet />;
 };
 
 export default PublicRoute;

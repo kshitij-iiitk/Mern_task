@@ -1,5 +1,4 @@
 //middleware to verify the token and attach the user to the request object
-// The auth middleware is used to verify the token and attach the user to the request object.
 
 const jwt = require("jsonwebtoken");
 
@@ -9,7 +8,7 @@ const auth = (req, res, next) => {
 
     try {
         const decoded = jwt.verify(token.replace("Bearer ", ""), process.env.JWTPRIVATEKEY);
-        req.user = decoded; // Attach user to request
+        req.user = decoded; 
         next();
     } catch (error) {
         res.status(400).send({ message: "Invalid token." });

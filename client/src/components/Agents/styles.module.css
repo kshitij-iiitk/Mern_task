@@ -1,0 +1,60 @@
+.formContainer {
+  max-width: 400px;
+  margin: 1vh;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.formGroup {
+  margin-bottom: 15px;
+}
+
+.formGroup label {
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.formGroup input,
+.formGroup select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.phoneInputContainer {
+  display: flex;
+}
+
+.phoneInputContainer select {
+  width: 30%;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.phoneInputContainer input {
+  width: 70%;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.submitButton {
+  width: 100%;
+  background: #007bff;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.submitButton:hover {
+  background: #0056b3;
+}
