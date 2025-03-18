@@ -11,7 +11,7 @@ Follow these steps to set up and run the project locally.
 
 ### Clone the Repository
 ```sh
-git clone <your-repository-url>
+git clone https://github.com/kshitij-iiitk/Mern_task.git
 cd Mern_task
 ```
 
