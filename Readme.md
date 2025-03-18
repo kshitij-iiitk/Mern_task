@@ -35,6 +35,7 @@ Create a `.env` file in the `server` directory and configure the following varia
 PORT=5000
 MONGO_URI=<your-mongodb-uri>
 JWT_SECRET=<your-secret-key>
+JWTPRIVATEKEY=<same-secrect-key>
 ```
 
 ## Features
