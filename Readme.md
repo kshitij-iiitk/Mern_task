@@ -12,7 +12,7 @@ Follow these steps to set up and run the project locally.
 ### Clone the Repository
 ```sh
 git clone <your-repository-url>
-cd <your-project-folder>
+cd Mern_task
 ```
 
 ### Install and Run the Client
