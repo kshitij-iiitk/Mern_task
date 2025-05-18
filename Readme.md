@@ -14,14 +14,14 @@ cd Mern_task
 ```sh
 cd client
 npm install
-npm start
+npm run start
 ```
 
 ### Install and Run the Server
 ```sh
 cd server
 npm install
-npm start
+npm run start
 ```
 
 ## Environment Variables
